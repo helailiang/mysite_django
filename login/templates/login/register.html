@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}注册新用户{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+          <form class='form-register' action="/login/register/" method="post">
+              {% csrf_token %}
+              {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>  <!--使用了Bootstrap的警示信息类alert-->
+              {% endif %}
+              <h2 class="text-center">欢迎注册</h2>
+              <div class="form-group">
+                  {{ reg_form.username.label_tag }}
+                  {{ reg_form.username }}
+              </div>
+              <div class="form-group">
+                  {{ reg_form.password1.label_tag }}
+                  {{ reg_form.password1 }}
+              </div>
+              <div class="form-group">
+                  {{ reg_form.password2.label_tag }}
+                  {{ reg_form.password2 }}
+              </div>
+              <div class="form-group">
+                  {{ reg_form.email.label_tag }}
+                  {{ reg_form.email }}
+              </div>
+              <div class="form-group">
+                  {{ reg_form.sex.label_tag }}
+                  {{ reg_form.sex }}
+              </div>
+              <div class="form-group">
+                  {{ reg_form.captcha.errors }}
+                  {{ reg_form.captcha.label_tag }}
+                  {{ reg_form.captcha }}
+              </div>
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">提交</button>
+          </form>
+        </div>
+    </div> <!-- /container -->
+
+{% endblock %}

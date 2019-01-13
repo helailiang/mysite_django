@@ -1,0 +1,12 @@
+Django==1.11.7
+django-ranged-response==0.2.0
+django-simple-captcha==0.5.9
+get==2018.11.19
+Pillow==5.4.1
+post==2018.11.20
+public==2018.11.20
+PyMySQL==0.9.3
+pytz==2018.9
+query-string==2018.11.20
+request==2018.11.20
+six==1.12.0
